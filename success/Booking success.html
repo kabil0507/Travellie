@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Karma&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Booking Success</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url(image.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #fff;
+        }
+
+        .container {
+            margin: 20%;
+            padding: 30px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 15px;
+            text-align: left;
+            font-size: 120%;
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(255, 255, 255);
+        }
+
+        .icon {
+            text-align: center;
+            font-size: 500%;
+            color: rgb(255, 255, 255);
+        }
+
+        @media screen and (max-width:760px) {
+            .container {
+                margin: 5%;
+            }
+            th,td {
+                font-size: 100%;
+            }
+        }
+
+
+
+
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #0c4f17;
+            color: #fff;
+            padding: 10px 20px;
+        }
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .navbar .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .navbar .logo p {
+            font-family: 'Kaushan Script', cursive;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links li {
+            position: relative;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+        }
+        .nav-links a:hover {
+            color: #FFD700;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 30px;
+            left: 0;
+            background-color: #0c4f17;
+            padding: 10px 0;
+            border-radius: 5px;
+        }
+        .dropdown-menu a {
+            display: block;
+            padding: 8px 20px;
+            text-decoration: none;
+            color: #fff;
+        }
+        .dropdown-menu a:hover {
+            background-color: #FFD700;
+            color: #000;
+        }
+        .nav-links .services:hover .dropdown-menu {
+            display: block;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                background-color: #0c4f17;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                display: none;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+
+
+
+
+
+        /* General Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-column {
+    flex: 1;
+    padding-left: 60px;
+  }
+  
+  .footer-column h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 2px solid #ff6347;
+    display: inline-block;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-column ul li a:hover {
+    color: #ff6347;
+  }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    body{
+        width: 100%;
+    }
+    .nav-links {
+      display: none;
+    }
+    .hero-text{
+        font-size: x-small;
+    }
+    .social-icons img {
+      width: 20px;
+    }
+  
+    .icon-container {
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .hero-section-content{
+        flex-direction: column;
+    }
+    .heading{
+        font-size: 90%;
+    }
+    .package {
+      width: 150px;
+    }
+  
+    .header h1 {
+      font-size: 32px;
+    }
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+  
+    .footer-column {
+        text-align: center;
+    }
+    .hero-icons2{
+        display: none;
+    }
+    .hero-icons3{
+        display: none;
+    }
+    .hero-icons4{
+        display: none;
+    }
+  }
+  
+  
+  
+  @media (max-width: 480px) {
+    .search-bar input {
+      width: 90%;
+    }
+    .content{
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .header h1 {
+      font-size: 24px;
+    }
+  
+    .package {
+      width: 100px;
+    }
+    .hero-section-content{
+        flex-direction: column;
+    }
+  }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.jpeg" alt="logo">
+            <p>Travellie.com</p>
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../About Us/aboutus.html/about.html">About Us</a></li>
+            <li><a href="../review/reviews.html">Review</a></li>
+            <li class="services">
+                Services
+                <div class="dropdown-menu">
+                    <a href="../booking/booking.html">Booking</a>
+                    <a href="../packages/packages.html">Packages</a>
+                </div>
+            </li>
+            <li><a href="../contact Us/Contact Us.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+    });
+</script>
+
+
+    <div class="container">
+        <div class="icon">&#x2714;</div>
+        <h1>Booking Success!</h1>
+        <table>
+            <tr>
+                <td><strong>Booking ID</strong></td>
+                <td>84</td>
+            </tr>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td>Thathsara Disanayake</td>
+            </tr>
+            <tr>
+                <td><strong>Email</strong></td>
+                <td>thathsaradis@gmail.com</td>
+            </tr>
+            <tr>
+                <td><strong>Phone Number</strong></td>
+                <td>089 1234 567</td>
+            </tr>
+            <tr>
+                <td><strong>Address</strong></td>
+                <td>No 39, Yaggapitiya, Rathnapura</td>
+            </tr>
+            <tr>
+                <td><strong>Arrival Date</strong></td>
+                <td>2024-12-20</td>
+            </tr>
+            <tr>
+                <td><strong>Leaving Date</strong></td>
+                <td>2024-12-31</td>
+            </tr>
+            <tr>
+                <td><strong>Guests</strong></td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td><strong>Package</strong></td>
+                <td>Island Explorer</td>
+            </tr>
+            <tr>
+                <td><strong>Card Number</strong></td>
+                <td>765*******765</td>
+            </tr>
+            <tr>
+                <td><strong>Card Holder</strong></td>
+                <td>Thathsara</td>
+            </tr>
+            <tr>
+                <td><strong>Expire Date</strong></td>
+                <td>11/2027</td>
+            </tr>
+            <tr>
+                <td><strong>CVV</strong></td>
+                <td>4*6</td>
+            </tr>
+        </table>
+    </div>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#">🏠 Home</a></li>
+              <li><a href="#">🌍 Reviews</a></li>
+              <li><a href="#">📦 Packages</a></li>
+              <li><a href="#">📋 About Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Contacts</h3>
+            <ul>
+              <li>📞 011 222 1234</li>
+              <li>📞 077 1234 567</li>
+              <li>✉️ <a href="mailto:travellanka@email.com">travellanka@email.com</a></li>
+              <li>📍 Badulla, Sri Lanka</li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Follow Us</h3>
+            <ul>
+                <li><a href="#">📘 Facebook</a></li>
+                <li><a href="#">📺 YouTube</a></li>
+                <li><a href="#">📸 Instagram</a></li>
+                <li><a href="#">🐦 Twitter</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>Created by <strong>Travellie media</strong> || &copy; 2025. All Rights Reserved</p>
+      </div>
+</footer>
+
+</body>
+
+</html>

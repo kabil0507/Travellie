@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Karma&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Istok Web' rel='stylesheet'>
+    <title>Custom Tours</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Header Section */
+        .hero-section {
+            position: relative;
+            background-image: url('bg1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #D3D3D3;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                background-position: top;
+                height: 70vh;
+            }
+
+            h1 {
+                font-size: 3rem;
+                color: #D3D3D3;
+            }
+
+            .form-container {
+                flex-direction: column;
+            }
+
+            .add-destination {
+                align-self: center;
+                border-right: hidden !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section {
+                background-position: top;
+                height: 50vh;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Hero Content */
+        .hero-content {
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 48px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .breadcrumb {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            color: black;
+            padding: 10px 0;
+        }
+
+        .breadcrumb span {
+            color: black;
+        }
+
+        .breadcrumb-line {
+            border-top: 4px solid gray;
+            margin-top: 4px;
+        }
+
+        .breadcrumb img {
+            width: 12px;
+            height: 12px;
+            vertical-align: middle;
+            margin: 0 5px;
+            filter: grayscale(100%);
+            opacity: 0.8;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .content {
+            padding: 5% 10%;
+        }
+
+        .content h2 {
+            text-align: center;
+            font-size: 2rem;
+            padding: 20px;
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .add-destination {
+            flex: 1;
+            border-right: 2px solid #919191;
+            padding: 20px;
+            background: white;
+        }
+
+        .add-destination input,
+        .add-destination button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 0px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .details {
+            text-align: left;
+            font-weight: bold;
+            list-style-type: none;
+            padding-left: 30px;
+            ;
+        }
+
+        .grid-container {
+            flex: 3;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .grid-item {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .grid-item .details {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .grid-item .details button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        /* General Styles */
+        * body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #0c4f17;
+            color: #fff;
+            padding: 10px 20px;
+            height: 50px;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .navbar .logo p {
+            font-family: 'Kaushan Script', cursive;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            color: #FFD700;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 30px;
+            left: 0;
+            background-color: #0c4f17;
+            padding: 10px 0;
+            border-radius: 5px;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 8px 20px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #FFD700;
+            color: #000;
+        }
+
+        .nav-links .services:hover .dropdown-menu {
+            display: block;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* General Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-decoration: none;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-column {
+            flex: 1;
+            padding-left: 60px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-bottom: 2px solid #ff6347;
+            display: inline-block;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: #ff6347;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                width: 100%;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                background-color: #0c4f17;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                display: none;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            /* footer */
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+
+            .footer-column {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.jpeg" alt="logo">
+            <p>Travellie.com</p>
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../About Us/aboutus.html/about.html">About Us</a></li>
+            <li><a href="../review/reviews.html">Review</a></li>
+            <li class="services">
+                Services
+                <div class="dropdown-menu">
+                    <a href="../booking/booking.html">Booking</a>
+                    <a href="../packages/packages.html">Packages</a>
+                </div>
+            </li>
+            <li><a href="../contact Us/Contact Us.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    </script>
+
+    <header class="hero-section">
+
+        <div class="hero-content">
+            <h1>Custom Tours</h1>
+        </div>
+    </header>
+
+    <div class="content">
+        <h2>Create your own tour with our top destinations</h2>
+        <div class="form-container">
+            <div class="add-destination">
+                <div>
+                    <h2>What makes this special?</h2>
+                    <img src="p3.jpg" width="275px" alt="p3"><br>
+                    <div class="details">
+
+                        <ul>
+                            <li>Unique Destinations</li><br>
+                            <li>Focus on Your Interests</li><br>
+                            <li>Special Activities and Experiences</li><br>
+                            <li>Accommodation Choices</li><br>
+                            <li>Personalized Services</li><br>
+                            <li>Local Guides & Experts</li><br>
+                            <li>Tailored Adventure</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <div class="grid-container" id="destinationGrid">
+                <div class="grid-item">
+                    <img src="yala.jfif" alt="Activity">
+                    <div class="details">
+                        <h3> Serenity Unleashed at Yala</h3>
+                        <p> Where Nature Meets Adventure</p>
+                        <button onclick="addToCart('Serenity Unleashed at Yala')">Add</button>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <img src="flying rawana.jpg" alt="Day Tour">
+                    <div class="details">
+                        <h3>Ravana in flight</h3>
+                        <p>Myth takes wing</p>
+                        <button onclick="addToCart('Ravana in flight')">Add</button>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <img src="mirissa 1.jpg" alt="Taxi">
+                    <div class="details">
+                        <h3>Chasing sunsets in Mirissa</h3>
+                        <p>Serenity by the waves</p>
+                        <button onclick="addToCart('Chasing sunsets in Mirissa')">Add</button>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <img src="dalada maligawa1.jfif" alt="Taxi">
+                    <div class="details">
+                        <h3> The Temple of the Tooth</h3>
+                        <p>A timeless treasure of faith and culture</p><br>
+                        <button onclick="addToCart(' The Temple of the Tooth')">Add</button>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <img src="sera ella.jfif" alt="Activity">
+                    <div class="details">
+                        <h3>Sera Ella</h3>
+                        <p>Where dreams and reality intertwine</p><br>
+                        <button onclick="addToCart('Sera Ella')">Add</button>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <img src="fishery.jpg" alt="Activity">
+                    <div class="details">
+                        <h3>Koggala Fisheries</h3>
+                        <p> Your perfect fishing escape awaits</p><br>
+                        <button onclick="addToCart('Koggala Fisheries')">Add</button>
+                    </div>
+                </div>
+
+                <!-- New grid items -->
+                <div class="grid-item">
+                    <img src="sigiriya.jpg" alt="Cultural Visit">
+                    <div class="details">
+                        <h3>Climbing Sigiriya</h3>
+                        <p>The Lion Rock of Legends</p>
+                        <button onclick="addToCart('Climbing Sigiriya')">Add</button>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <img src="udawalawe.jpeg" alt="Wildlife">
+                    <div class="details">
+                        <h3>Safari in Udawalawe</h3>
+                        <p>Home of Gentle Giants</p>
+                        <button onclick="addToCart('Safari in Udawalawe')">Add</button>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <img src="galle.jpg" alt="Heritage">
+                    <div class="details">
+                        <h3>Wandering in Galle Fort</h3>
+                        <p>Where History Meets the Sea</p>
+                        <button onclick="addToCart('Wandering in Galle Fort')">Add</button>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <img src="ella.jpg" alt="Scenic Views">
+                    <div class="details">
+                        <h3>Ella's Nine Arches Bridge</h3>
+                        <p>A Marvel in the Mist</p>
+                        <button onclick="addToCart('Ella\'s Nine Arches Bridge')">Add</button>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <img src="nuwaraeliya.jpg" alt="Hill Country">
+                    <div class="details">
+                        <h3>Tea Trails in Nuwara Eliya</h3>
+                        <p>A Journey Through Tea Gardens</p>
+                        <button onclick="addToCart('Tea Trails in Nuwara Eliya')">Add</button>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <img src="trincomalee.jpg" alt="Beaches">
+                    <div class="details">
+                        <h3>Trincomalee Beaches</h3>
+                        <p>Crystal Clear Waters Await</p>
+                        <button onclick="addToCart('Trincomalee Beaches')">Add</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function addDestination() {
+            const input = document.getElementById('destinationInput');
+            const destination = input.value.trim();
+            if (destination) {
+                const grid = document.getElementById('destinationGrid');
+                const newItem = document.createElement('div');
+                newItem.className = 'grid-item';
+                newItem.innerHTML = `
+                    <img src="https://via.placeholder.com/200" alt="${destination}">
+                    <div class="details">
+                        <p>${destination}</p>
+                        <button onclick="addToCart('${destination}')">Add</button>
+                    </div>
+                `;
+                grid.appendChild(newItem);
+                input.value = '';
+            }
+        }
+
+        function addToCart(item) {
+            alert(`${item} added to your tour!`);
+        }
+    </script>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">🏠 Home</a></li>
+                    <li><a href="#">🌍 Reviews</a></li>
+                    <li><a href="#">📦 Packages</a></li>
+                    <li><a href="#">📋 About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contacts</h3>
+                <ul>
+                    <li>📞 011 222 1234</li>
+                    <li>📞 077 1234 567</li>
+                    <li>✉️ <a href="mailto:travellanka@email.com">travellanka@email.com</a></li>
+                    <li>📍 Badulla, Sri Lanka</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#">📘 Facebook</a></li>
+                    <li><a href="#">📺 YouTube</a></li>
+                    <li><a href="#">📸 Instagram</a></li>
+                    <li><a href="#">🐦 Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Created by <strong>Travellie media</strong> || &copy; 2025. All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+
+</html>

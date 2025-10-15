@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file -->
+    <script src="script.js" defer></script> <!-- Link to external JS file -->
+  </head>
+  <body>
+    <div class="payment-container">
+      <h2>Payment Details</h2>
+      <form id="paymentForm" action="sucess.html">
+          <div class="form-group">
+            <label for="Card-Holder">Card Holder Name</label>
+            <input type="text" id="Card-Holder" placeholder="Enter your name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="Card-Number">Card Number</label>
+            <input type="text" id="Card-Number" placeholder="1234 5678 9012 3456" pattern="(\d{4}[\s\-]?){3}\d{4}" title="Card number must be exactly 16 digits" maxlength="19" required>
+          </div>
+
+          <div class="form-group">
+            <label for="Expiry-Date">Expiry Date</label>
+            <input type="text" id="Expiry-Date" placeholder="MM/YY" pattern="\d{2}/\d{2}" title="Expiry date must be in MM/YY format" maxlength="5" required>
+          </div>
+
+          <div class="form-group">
+            <label for="CVV">CVV</label>
+            <input type="password" id="CVV" placeholder="***" required>
+          </div>
+
+          <div class="icons">
+            <img src="visa.png" alt="Visa">
+            <img src="mastercard.png" alt="MasterCard">
+            <img src="amex.png" alt="Amex">
+          </div>
+          
+          <div>
+
+            <button type="submit" class="btn-submit" id="btn-submit">Pay Now</button>
+          </div>
+        </form>
+    </div>
+  </body>
+</html>

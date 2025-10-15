@@ -1,0 +1,606 @@
+/* General Styles */
+* body, html {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        box-sizing: border-box;
+      }
+      
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+/* Navbar Styles */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0c4f17;
+    color: #fff;
+    padding: 10px 20px;
+    height: 40px;
+}
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.navbar .logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.navbar .logo p {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.nav-links li {
+    position: relative;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    font-family: Garamond, serif;
+}
+.nav-links a:hover {
+    color: #FFD700;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background-color: #0c4f17;
+    padding: 10px 0;
+    border-radius: 5px;
+}
+.dropdown-menu a {
+    display: block;
+    padding: 8px 20px;
+    text-decoration: none;
+    color: #fff;
+}
+.dropdown-menu a:hover {
+    background-color: #FFD700;
+    color: #000;
+}
+.nav-links .services:hover .dropdown-menu {
+    display: block;
+}
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+  /*Header section*/
+  .header {
+    background-image: url('Nine-Arch-Bridge.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+  }
+  .header p{
+    font-size: 35px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+  }
+  .header h1 {
+    font-size: 62px;
+    top: 20px;
+    margin-bottom: 60px;
+    text-shadow: 0 5px 5px rgba(1, 1, 1, 1);
+  }
+  
+  .search-bar {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .search-bar input {
+    padding: 10px;
+    width: 70%;
+    max-width: 400px;
+    border: none;
+    border-radius: 20px 0 0 20px;
+  }
+  
+  .search-bar button {
+    padding: 10px;
+    border: none;
+    background-color: green;
+    color: white;
+    border-radius: 0px 20px 20px 0px;
+    cursor: pointer;
+  }
+  .search-bar button:hover{
+    background-color: #0c4f17;
+  }
+ /*service icon-container */
+.icon-container {
+    display: flex;
+    justify-content: space-around;
+    justify-content: center;
+    gap: 120px;
+    flex: 1;
+}
+.heading{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:40px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: #181313;
+}
+.icon-item {
+    text-align: center;
+}
+.service-icon-img{
+    height:80px; 
+    width:80px;
+}
+.icon-text {
+    font-size: 16px;
+    color: #0d0202;
+    font-weight: bold;
+}
+
+/* choosing us section */
+.hero-section {
+    background: url('ancient\ place.jpg') no-repeat center center/cover;
+    width: 100%;
+    height: 400px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    text-align: center;   
+}
+.hero-section::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0,0, 0.5); 
+    z-index: 1;
+}
+.content-area{
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text{
+    font-size:40px;
+    color: #ffffff;
+    margin: 0;
+}  
+
+.hero-section-content{
+    display: flex;
+    gap: 100px;
+    color: #100202;
+}
+.hero-icon-text {
+    font-size:25px;
+    color: #ffffff;
+}
+.hero-icons-p{
+    font-size:18px;
+    color: #ffffff;
+}
+
+/* services boxes */
+.services{
+    text-align: center;
+}
+.services h2{
+    font-family: 'Istok Web';
+    font-size: 40px;
+    font-weight: bolder;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+}
+.services .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+}
+.services .box-container .box {
+    width: 250px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border-radius: 20px;
+}
+.services .box-container .box:hover {
+    transform: translateY(-10px);
+}
+.services .box-container .box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10%;
+}
+.services .box-container .box p {
+    padding: 15px;
+    font-family: 'Istok Web';
+    font-size: 16px;
+    font-weight: bold;
+    color: #0f0202;
+}
+
+/* Packages boxes */
+.packages{
+    text-align: center;
+}
+.packages h2{
+    font-family: 'Istok Web';
+    font-size: 40px;
+    font-weight: bolder;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+.packages .box-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.packages .box-container .box {
+    width: 250px;
+    height: 350px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border-radius:8px;
+}
+.packages .box-container .box:hover {
+    transform: translateY(-10px);
+}
+.packages .box-container .box img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.packages .box-container .box p {
+    padding: 20px;
+    font-family: 'Istok Web';
+    font-size: 16px;
+    font-weight: bold;
+    color: #0f0202;
+}
+.money{
+    font-size:20px ;
+    color: #333;
+}
+.show-more {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .show-more:hover {
+    background-color:  rgb(54, 3, 184);
+  }
+/* Completetd tours */
+.Tours-container{
+    position:relative;
+    background: url('images/viewpoint\ .jpg') no-repeat;
+    background-size: cover; /* Makes the image cover the entire area */
+    background-position: center; /* Centers the image */
+    z-index:0;
+    height:350px;
+    margin-left: 80px;
+    margin-right: 80px;
+    border-radius: 40px;
+    align-items: center;
+    justify-content: center;
+}
+.Tours-container .content{
+    display: flex;
+    justify-content: space-between;
+    /* margin-left: 200px; */
+    /* margin-right: 200px; */
+    align-items: center;
+    color: #ffffff;
+    z-index:2;
+}
+.content-text{
+    text-align: center;
+    padding: 30px;
+}
+.text1{
+    margin-top: 120px;
+    font-size: 50px;
+    font-weight: bolder;
+    font-family:sans-serif;
+}
+.text2{
+    font-size: 20px;
+    font-weight: bolder;
+    font-family:'Istok Web' ;
+}
+/* Customer reviews */
+.reviews-section {
+    text-align: center;
+    padding: 60px 20px;
+}
+.reviews-section h2{
+    text-align: right;
+    margin-right:120px;
+    font-family:'Istok Web' ;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+.reviews-section a{
+    text-align: right;
+    font-family: sans-serif;
+    color: #181313;
+    text-decoration: none;  
+}
+.reviews-section a:hover {
+    color: rgb(16, 36, 192);             
+}
+
+.reviews-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.reviews-section .review-link{
+    text-align: right;
+    margin-right:120px ;
+}
+
+.review-card {
+    background-color: rgb(243, 237, 237);
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease;
+    justify-content: center;  
+    align-items: center;      
+}
+
+.review-card:hover {
+    transform: translateY(-10px);
+}
+
+.review-card img {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 60px; 
+    height: 60px; 
+    left: 120px;
+    top:10px;
+    border-radius: 50%; 
+    object-fit: cover;
+    
+}
+
+.review-content {
+    padding: 20px;
+    position: relative;
+    align-items: center;
+    text-align: center;
+}
+
+.review-content h3 {
+    margin: 10px 0;
+    color: #555;
+}
+
+.stars {
+    color: #FFD700;
+    margin: 10px 0;
+}
+
+.review-text {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+/* General Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-column {
+    flex: 1;
+    padding-left: 60px;
+  }
+  
+  .footer-column h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 2px solid #ff6347;
+    display: inline-block;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-column ul li a:hover {
+    color: #ff6347;
+  }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    body{
+        width: 100%;
+    }
+    .nav-links {
+        flex-direction: column;
+        background-color: #0c4f17;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        display: none;
+    }
+    .nav-links.show {
+        display: flex;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .header h1 {
+        font-size: 32px;
+      }
+    .hero-text{
+        font-size:30px;
+    }
+    .social-icons img {
+      width: 20px;
+    }
+    .icon-container {
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .hero-section{
+      height:1500px;
+    }
+    .hero-section-content{
+        flex-direction: column;
+    }
+    .heading{
+        font-size:16px;
+    }
+    .service-icon-img{
+        height:60px; 
+        width:60px;
+    }
+    .icon-text{
+        font-size: 8px;
+    }
+    .package {
+      width: 150px;
+    }
+    
+    .content{
+        flex-wrap: wrap;
+        flex: 1;
+        gap: 20px;
+    }
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+  
+    .footer-column {
+        text-align: center;
+    }
+    .text1{
+        font-size: 40px;
+    }
+    .text2{
+        font-size: 15px;
+    }
+    .Tours-container .content{
+       flex-wrap: wrap;
+       justify-content: center;
+       text-align: center;
+    }
+    .Tours-container {
+        height: 600px;
+    }
+  }
+  
+  
+  @media (max-width: 480px) {
+    .search-bar input {
+      width: 60%;
+    }
+    .content{
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .header h1 {
+      font-size:40px;
+    }
+    .header p{
+        font-size:20px;
+    }
+    .package {
+      width: 100px;
+    }
+    .Tours-container {
+        height: 1000px;
+    }
+  }
+  

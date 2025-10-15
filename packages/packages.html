@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travellie.com</title>
+    <link rel="icon" href="images/logo2.png">
+    <link href="https://fonts.googleapis.com/css2?family=Karma&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Istok Web' rel='stylesheet'> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="footer.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url("images/tea.webp");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        /* nav bar */
+
+        .image {
+            width: 100%;
+        }
+
+        /* Navbar Styles */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0c4f17;
+    color: #fff;
+    padding: 10px 20px;
+    height: 40px;
+}
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.navbar .logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.navbar .logo p {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.nav-links li {
+    position: relative;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    font-family: Garamond, serif;
+}
+.nav-links a:hover {
+    color: #FFD700;
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background-color: #0c4f17;
+    padding: 10px 0;
+    border-radius: 5px;
+}
+.dropdown-menu a {
+    display: block;
+    padding: 8px 20px;
+    text-decoration: none;
+    color: #fff;
+}
+.dropdown-menu a:hover {
+    background-color: #FFD700;
+    color: #000;
+}
+.nav-links .services:hover .dropdown-menu {
+    display: block;
+}
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+        /* main title */
+
+        .title {
+            font-size: 400%;
+            text-align: center;
+            padding: 15%;
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+            background-color: rgba(000, 000, 000, 0.5);
+        }
+
+        /* content */
+
+        .container {
+            background-color: rgb(255, 255, 255);
+            padding: 3% 10%;
+        }
+
+        .packages {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+
+        .row {
+            margin-bottom: 5%;
+        }
+
+        .row-title {
+            font-size: 300%;
+            font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+            font-weight: 500;
+            color: #1D1D1D;
+        }
+
+        .row-cont {
+            display: flex;
+            /* flex-direction: row; */
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 22%;
+            margin: 1.5%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transform: translateY(-10px);
+        }
+
+        .card-body {
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+            height: 160px;
+            overflow: hidden;
+        }
+
+        .card-title {
+            background-color: #FFFFFF;
+            margin: 0;
+            font-size: 120%;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-content: center;
+        }
+
+        .pkg-img {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        /* popup box */
+
+        .popup-back {
+            backdrop-filter: blur(12px);
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .popup {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding: 3%;
+            background-color: rgba(0, 0, 0, 0.50);
+            color: #fff;
+            position: fixed;
+            z-index: 3;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .popup-content {
+            display: flex;
+        }
+
+        .close {
+            padding: 5px;
+            font-size: 130%;
+            color: #fff;
+            cursor: pointer;
+            height: 40px;
+        }
+
+        .image {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .image>img {
+            border-radius: 10px;
+        }
+
+        .details {
+            padding: 5px;
+
+        }
+
+        .popup-body {
+            min-width: 250px;
+            height: 310px;
+            overflow-y: scroll;
+            background-color: rgba(0, 0, 0, 0.60);
+            border-radius: 8px;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .popup-title {
+            font-size: 200%;
+            margin-bottom: 10px;
+        }
+
+        .book-btn>a {
+            padding: 10px;
+            font-size: 120%;
+            text-decoration: none;
+            color: #000;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        .book-btn>a:hover {
+            color: #fff;
+            background-color: #9B9B9B;
+        }
+
+        .custom {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #f2f5fc, #dbe9ff);
+        }
+
+        .contact-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .contact-content {
+            max-width: 500px;
+        }
+
+        .contact-content h2 {
+            font-size: 2rem;
+            color: #2e3a59;
+            margin-bottom: 10px;
+        }
+
+        .contact-content p {
+            font-size: 1rem;
+            color: #5c6b88;
+            margin-bottom: 20px;
+        }
+
+        .contact-button {
+            display: inline-block;
+            padding: 12px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background-color: #218838;
+        }
+
+        .contact-image img {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+        }
+        /* General Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-column {
+    flex: 1;
+    padding-left: 60px;
+  }
+  
+  .footer-column h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 2px solid #ff6347;
+    display: inline-block;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-column ul li a:hover {
+    color: #ff6347;
+  }
+      
+/* Responsive Design */
+@media (max-width: 768px) {
+    body{
+        width: 100%;
+    }
+    .nav-links {
+        flex-direction: column;
+        background-color: #0c4f17;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        display: none;
+    }
+    .nav-links.show {
+        display: flex;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    /* footer */
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+  
+    .footer-column {
+        text-align: center;
+    }
+}
+        @media screen and (max-width:1024px) {
+            .popup-content {
+                flex-direction: column;
+            }
+        }
+
+        @media screen and (max-width:760px) {
+            .card {
+                width: 30%;
+            }
+
+            .container {
+                padding: 2%;
+            }
+
+            .row-title {
+                font-size: 200%;
+            }
+
+            .card-title {
+                font-size: 110%;
+            }
+
+            .card-body {
+                height: 140px;
+            }
+
+            .contact-section {
+                flex-direction: column;
+            }
+
+            .title {
+                font-size: 250%;
+            }
+        }
+
+        @media screen and (max-width:500px) {
+            .card-body {
+                height: 90px;
+            }
+
+            .card-title {
+                font-size: 100%;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get all cards and their show/hide buttons
+            const showDetailButtons = document.querySelectorAll('.card');
+            const closePopupButtons = document.querySelectorAll('.close');
+            const blur = document.getElementById('blur');
+
+            // Show popup details when clicking "Show Details"
+            showDetailButtons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    const popup = button.nextElementSibling; // Get the hidden popup related to the card
+                    popup.classList.remove('hidden'); // Show the popup
+                    blur.classList.remove('hidden');
+                });
+            });
+
+            // Hide popup details when clicking "Close"
+            closePopupButtons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    const popup = button.parentElement; // Get the popup to close
+                    popup.classList.add('hidden'); // Hide the popup
+                    blur.classList.add('hidden');
+                });
+            });
+
+            blur.addEventListener("click", function () {
+                const popup = document.querySelectorAll('.popup');
+                popup.forEach((popup) => {
+                    popup.classList.add('hidden'); // Hide all popups
+                });
+                blur.classList.add('hidden');
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.jpeg" alt="logo">
+            <p>Travellie.com</p>
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../About Us/aboutus.html/about.html">About Us</a></li>
+            <li><a href="../review/reviews.html">Review</a></li>
+            <li class="services">
+                Services
+                <div class="dropdown-menu">
+                    <a href="../booking/booking.html">Booking</a>
+                    <a href="../packages/packages.html">Packages</a>
+                </div>
+            </li>
+            <li><a href="../contact Us/Contact Us.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+    });
+</script>
+    <div class="title">PACKAGES</div>
+    <div class="popup-back hidden" id="blur"></div>
+    <div class="container">
+        <div class="packages">
+            <div class="row">
+                <div class="row-title">Adventure and Nature:</div>
+                <div class="row-cont">
+                    <div class="card">
+                        <div class="card-body"><img src="images/packages/p-3.jpg" alt="p3" class="pkg-img"></div>
+                        <div class="card-title">Adventure Expedition</div>
+                    </div>
+                    <div class="popup hidden">
+                        <div class="popup-content">
+                            <div class="image"><img src="images/packages/p-3.jpg" alt="p3" class="pkg-img">
+                                <div class="book-btn"><a href="../booking/booking.html">Book Now <i
+                                            class="fa-solid fa-angle-right"></i></a></div>
+                            </div>
+                            <div class="details">
+                                <div class="popup-title">Adventure Expedition</div>
+                                <div class="popup-body">
+                                    <p><strong>Duration:</strong> 14 Days / 13 Nights</p>
+                                    <p><strong>Price:</strong>$3,000 - $4,200</p>
+                                    <p><strong>Highlights:</strong></p>
+                                    <ul>
+                                        <li>Hike to the summit of Adam's Peak for sunrise</li>
+                                        <li>White-water rafting in Kitulgala</li>
+                                        <li>Safari in Yala National Park</li>
+                                        <li>Zip-lining in the rainforest</li>
+                                        <li>Scuba diving in Trincomalee</li>
+                                    </ul>
+                                    <p><strong>Package Inclusions:</strong></p>
+                                    <ul>
+                                        <li>Accommodation in adventure-themed lodges</li>
+                                        <li>Airport transfers</li>
+                                        <li>Daily breakfast and selected meals</li>
+                                        <li>Guided adventure activities</li>
+                                        <li>All necessary equipment for adventure sports</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <i class="fa-regular fa-circle-xmark close"></i>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body"><img src="images/packages/p-4.webp" alt="p4" class="pkg-img"></div>
+                        <div class="card-title">Wildlife Expedition</div>
+                    </div>
+                    <div class="popup hidden">
+                        <div class="popup-content">
+                            <div class="image"><img src="images/packages/p-4.webp" alt="p4" class="pkg-img">
+                                <div class="book-btn"><a href="../booking/booking.html">Book Now <i
+                                            class="fa-solid fa-angle-right"></i></a></div>
+                            </div>
+                            <div class="details">
+                                <div class="popup-title">Wildlife Expedition</div>
+                                <div class="popup-body">
+                                    <p><strong>Duration:</strong> 8 Days / 7 Nights</p>
+                                    <p><strong>Price:</strong>$1,800 - $2,800</p>
+                                    <p><strong>Highlights:</strong></p>
+                                    <ul>
+                                        <li>Safari in Udawalawe National Park</li>
+                                        <li>Elephant orphanage visit in Pinnawala</li>
+                                        <li>Bird watching in Bundala National Park</li>
+                                        <li>Nature walks in Sinharaja Rainforest</li>
+                                        <li>Boat safari in Madu River</li>
+                                    </ul>
+                                    <p><strong>Package Inclusions:</strong></p>
+                                    <ul>
+                                        <li>Accommodation in eco-friendly lodges</li>
+                                        <li>Airport transfers</li>
+                                        <li>Daily breakfast and selected meals</li>
+                                        <li>Guided wildlife excursions</li>
+                                        <li>Entrance fees to national parks</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <i class="fa-regular fa-circle-xmark close"></i>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body"><img src="images/packages/p-12.webp" alt="p12" class="pkg-img"></div>
+                        <div class="card-title">Island Explorer</div>
+                    </div>
+                    <div class="popup hidden">
+                        <div class="popup-content">
+                            <div class="image"><img src="images/packages/p-12.webp" alt="p12" class="pkg-img">
+                                <div class="book-btn"><a href="../booking/booking.html">Book Now <i
+                                            class="fa-solid fa-angle-right"></i></a></div>
+                            </div>
+                            <div class="details">
+                                <div class="popup-title">Island Explorer</div>
+                                <div class="popup-body">
+                                    <p><strong>Duration:</strong> 14 Days / 13 Nights</p>
+                                    <p><strong>Price:</strong>$3,500 - $4,500</p>
+                                    <p><strong>Highlights:</strong></p>
+                                    <ul>
+                                        <li>Discover the cultural triangle – Sigiriya, Polonnaruwa, and Dambulla</li>
+                                        <li>Relax on the golden sands of Arugam Bay</li>
+                                        <li>Snorkeling in Pigeon Island</li>
+                                        <li>Jeep safari in Wilpattu National Park</li>
+                                        <li>Visit the historic town of Jaffna</li>
+                                    </ul>
+                                    <p><strong>Package Inclusions:</strong></p>
+                                    <ul>
+                                        <li>Accommodation in diverse locations</li>
+                                        <li>Airport transfers</li>
+                                        <li>Daily breakfast and selected meals</li>
+                                        <li>Guided tours and activities</li>
+                                        <li>Entrance fees to attractions</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <i class="fa-regular fa-circle-xmark close"></i>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body"><img src="images/packages/p-8.jpg" alt="p8" class="pkg-img"></div>
+                        <div class="card-title">Hill Country Paradise</div>
+                    </div>
+                    <div class="popup hidden">
+                        <div class="popup-content">
+                            <div class="image"><img src="images/packages/p-8.jpg" alt="p8" class="pkg-img">
+                                <div class="book-btn"><a href="../booking/booking.html">Book Now <i
+                                            class="fa-solid fa-angle-right"></i></a></div>
+                            </div>
+                            <div class="details">
+                                <div class="popup-title">Hill Country Paradise</div>
+                                <div class="popup-body">
+                                    <p><strong>Duration:</strong> 6 Days / 5 Nights</p>
+                                    <p><strong>Price:</strong>$1,200 - $1,800</p>
+                                    <p><strong>Highlights:</strong></p>
+                                    <ul>
+                                        <li>Scenic train ride through the misty hills</li>
+                                        <li>Visit the beautiful botanical gardens in Peradeniya</li>
+                                        <li>Explore the quaint town of Ella</li>
+                                        <li>Hike to Little Adam's Peak</li>
+                                        <li>Tea tasting in a picturesque plantation</li>
+                                    </ul>
+                                    <p><strong>Package Inclusions:</strong></p>
+                                    <ul>
+                                        <li>Accommodation in charming hillside lodges</li>
+                                        <li>Airport transfers</li>
+                                        <li>Daily breakfast and selected meals</li>
+                                        <li>Guided tours and activities</li>
+                                        <li>Train tickets for the scenic journey</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <i class="fa-regular fa-circle-xmark close"></i>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body"><img src="images/packages/p-10.jpg" alt="p10" class="pkg-img"></div>
+                        <div class="card-title">Adventure and Culture Fusion</div>
+                    </div>
+                    <div class="popup hidden">
+                        <div class="popup-content">
+                            <div class="image"><img src="images/packages/p-10.jpg" alt="p10" class="pkg-img">
+                                <div class="book-btn"><a href="../booking/booking.html">Book Now <i
+                                            class="fa-solid fa-angle-right"></i></a></div>
+                            </div>
+                            <div class="details">
+                                <div class="popup-title">Adventure and Culture Fusion</div>
+                                <div class="popup-body">
+                                    <p><strong>Duration:</strong> 11 Days / 10 Nights</p>
+                                    <p><strong>Price:</strong>$2,500 - $3,500</p>
+                                    <p><strong>Highlights:</strong></p>
+                                    <ul>
+                                        <li>Trek to the World's End in Horton Plains</li>
+                                        <li>Explore ancient cave temples in Dambulla</li>
+                                        <li>White-water rafting in Kitulgala</li>
+                                        <li>Visit the historical city of Galle</li>
+                                        <li>Spice garden tour in Matale</li>
+                                    </ul>
+                                    <p><strong>Package Inclusions:</strong></p>
+                                    <ul>
+                                        <li>Accommodation in adventure-themed and cultural hotels</li>
+                                        <li>Airport transfers</li>
+                                        <li>Daily breakfast and selected meals</li>
+                                        <li>Guided adventure and cultural activities</li>
+                                        <li>All necessary equipment for adventure sports</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <i class="fa-regular fa-circle-xmark close"></i>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-body"><img src="images/packages/p-14.jpg" alt="p14" class="pkg-img"></div>
+                        <div class="card-title">Off-the-Beaten-Path Adventure</div>
+                    </div>
+                    <div class="popup hidden">
+                        <div class="popup-content">
+                            <div class="image"><img src="images/packages/p-14.jpg" alt="p14" class="pkg-img">
+                                <div class="book-btn"><a href="../booking/booking.html">Book Now <i
+                                            class="fa-solid fa-angle-right"></i></a></div>
+                            </div>
+                            <div class="details">
+                                <div class="popup-title">Off-the-Beaten-Path Adventure</div>
+                                <div class="popup-body">
+                                    <p><strong>Duration:</strong> 12 Days / 11 Nights</p>
+                                    <p><strong>Price:</strong>$2,800 - $3,800</p>
+                                    <p><strong>Highlights:</strong></p>
+                                    <ul>
+                                        <li>Trekking in Knuckles Mountain Range</li>
+                                        <li>Camping in Yala National Park</li>
+                                        <li>Visit the remote village of Ella</li>
+                                        <li>Explore the ancient forest monastery of Ritigala</li>
+                                        <li>Canyoning in Kithulgala</li>
+                                    </ul>
+                                    <p><strong>Package Inclusions:</strong></p>
+                                    <ul>
+                                        <li>Accommodation in unique and secluded locations</li>
+                                        <li>Airport transfers</li>
+                                        <li>Daily breakfast and selected meals</li>
+                                        <li>Guided off-the-beaten-path adventures</li>
+                                        <li>Camping equipment and necessary gear</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <i class="fa-regular fa-circle-xmark close"></i>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="row-title">Cultural and Heritage:</div>
+                <div class="row-cont">
+                    <div class="card">
+                        <div class="card-body"><img src="images/packages/p-2.jpg" alt="p2" class="pkg-img"></div>
+                        <div class="card-title">Cultural Odyssey</div>
+                    </div>
+                    <div class="popup hidden">
+                        <div class="popup-content">
+                            <div class="image"><img src="images/packages/p-2.jpg" alt="p2" class="pkg-img">
+                                <div class="book-btn"><a href="../booking/booking.html">Book Now <i
+                                            class="fa-solid fa-angle-right"></i></a></div>
+                            </div>
+                            <div class="details">
+                                <div class="popup-title">Cultural Odyssey</div>
+                                <div class="popup-body">
+                                    <p><strong>Duration:</strong> 10 Days / 9 Nights</p>
+                                    <p><strong>Price:</strong>$2,200 - $3,200</p>
+                                    <p><strong>Highlights:</strong></p>
+                                    <ul>
+                                        <li>Visit UNESCO World Heritage Sites: Sigiriya, Dambulla, and Kandy</li>
+                                        <li>Explore ancient temples and historical landmarks</li>
+                                        <li>Traditional dance and cultural shows</li>
+                                        <li>Scenic train ride through the Hill Country</li>
+                                        <li>Tea plantation tour in Nuwara Eliya</li>
+                                    </ul>
+                                    <p><strong>Package Inclusions:</strong></p>
+                                    <ul>
+                                        <li>Accommodation in heritage hotels and boutique lodges</li>
+                                        <li>Airport transfers</li>
+                                        <li>Daily breakfast and selected meals</li>
+                                        <li>Entrance fees to historical sites</li>
+                                        <li>Professional local guide services</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <i class="fa-regular fa-circle-xmark close"></i>
+                    </div>
+                    <div class="card">
+                        <div class="card-body"><img src="images/packages/p-11.webp" alt="p11" class="pkg-img"></div>
+                        <div class="card-title">Festivals and Traditions Experience</div>
+                    </div>
+                    <div class="popup hidden">
+                        <div class="popup-content">
+                            <div class="image"><img src="images/packages/p-11.webp" alt="p11" class="pkg-img">
+                                <div class="book-btn"><a href="../booking/booking.html">Book Now <i
+                                            class="fa-solid fa-angle-right"></i></a></div>
+                            </div>
+                            <div class="details">
+                                <div class="popup-title">Festivals and Traditions Experience</div>
+                                <div class="popup-body">
+                                    <p><strong>Duration:</strong> 8 Days / 7 Nights</p>
+                                    <p><strong>Price:</strong>$1,600 - $2,500</p>
+                                    <p><strong>Highlights:</strong></p>
+                                    <ul>
+                                        <li>Participate in cultural festivals (based on the season)</li>
+                                        <li>Witness traditional dance and music performances</li>
+                                        <li>Visit local markets and artisans</li>
+                                        <li>Attend a cooking class for authentic Sri Lankan cuisine</li>
+                                        <li>Explore the lesser-known cultural gems</li>
+                                    </ul>
+                                    <p><strong>Package Inclusions:</strong></p>
+                                    <ul>
+                                        <li>Accommodation in culturally rich locations</li>
+                                        <li>Airport transfers</li>
+                                        <li>Daily breakfast and traditional meals</li>
+                                        <li>Tickets to cultural festivals</li>
+                                        <li>Guided cultural experiences</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <i class="fa-regular fa-circle-xmark close"></i>
+                    </div>
+                    <div class="card">
+                        <div class="card-body"><img src="images/packages/p-7.jpg" alt="p7" class="pkg-img"></div>
+                        <div class="card-title">Historical Heritage Trail</div>
+                    </div>
+                    <div class="popup hidden">
+                        <div class="popup-content">
+                            <div class="image"><img src="images/packages/p-7.jpg" alt="p7" class="pkg-img">
+                                <div class="book-btn"><a href="../booking/booking.html">Book Now <i
+                                            class="fa-solid fa-angle-right"></i></a></div>
+                            </div>
+                            <div class="details">
+                                <div class="popup-title">Historical Heritage Trail</div>
+                                <div class="popup-body">
+                                    <p><strong>Duration:</strong> 9 Days / 8 Nights</p>
+                                    <p><strong>Price:</strong>$1,800 - $2,800</p>
+                                    <p><strong>Highlights:</strong></p>
+                                    <ul>
+                                        <li>Visit ancient cities Anuradhapura and Polonnaruwa</li>
+                                        <li>Explore the sacred Temple of the Tooth in Kandy</li>
+                                        <li>Discover the historical Galle Fort</li>
+                                        <li>Cultural dance performances</li>
+                                        <li>Culinary experiences with traditional Sri Lankan cuisine</li>
+                                    </ul>
+                                    <p><strong>Package Inclusions:</strong></p>
+                                    <ul>
+                                        <li>Accommodation in heritage hotels</li>
+                                        <li>Airport transfers</li>
+                                        <li>Daily breakfast and selected meals</li>
+                                        <li>Guided historical tours</li>
+                                        <li>Cultural shows and performances</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <i class="fa-regular fa-circle-xmark close"></i>
+                    </div>
+                    <div class="card">
+                        <div class="card-body"><img src="images/packages/p-13.jpg" alt="p13" class="pkg-img"></div>
+                        <div class="card-title">Sri Lankan Culinary Delights</div>
+                    </div>
+                    <div class="popup hidden">
+                        <div class="popup-content">
+                            <div class="image"><img src="images/packages/p-13.jpg" alt="p13" class="pkg-img">
+                                <div class="book-btn"><a href="../booking/booking.html">Book Now <i
+                                            class="fa-solid fa-angle-right"></i></a></div>
+                            </div>
+                            <div class="details">
+                                <div class="popup-title">Sri Lankan Culinary Delights</div>
+                                <div class="popup-body">
+                                    <p><strong>Duration:</strong> 5 Days / 4 Nights</p>
+                                    <p><strong>Price:</strong>$1,000 - $1,500</p>
+                                    <p><strong>Highlights:</strong></p>
+                                    <ul>
+                                        <li>Cooking classes with local chefs</li>
+                                        <li>Spice plantation tour in Matale</li>
+                                        <li>Street food tour in Colombo</li>
+                                        <li>Seafood feast in Negombo</li>
+                                        <li>Traditional Sri Lankan dining experiences</li>
+                                    </ul>
+                                    <p><strong>Package Inclusions:</strong></p>
+                                    <ul>
+                                        <li>Accommodation in culinary-themed lodges</li>
+                                        <li>Airport transfers</li>
+                                        <li>Daily breakfast and culinary experiences</li>
+                                        <li>Guided food tours and cooking classes</li>
+                                        <li>Special dining events</li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                        <i class="fa-regular fa-circle-xmark close"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="row-title">Romance and Relaxation :</div>
+                <div class="row-cont">
+                    <div class="card">
+                        <div class="card-body"><img src="images/packages/p-5.jpg" alt="p5" class="pkg-img"></div>
+                        <div class="card-title">Romantic Getaway</div>
+                    </div>
+                    <div class="popup hidden">
+                        <div class="popup-content">
+                            <div class="image"><img src="images/packages/p-5.jpg" alt="p5" class="pkg-img">
+                                <div class="book-btn"><a href="../booking/booking.html">Book Now <i
+                                            class="fa-solid fa-angle-right"></i></a></div>
+                            </div>
+                            <div class="details">
+                                <div class="popup-title">Romantic Getaway</div>
+                                <div class="popup-body">
+                                    <p><strong>Duration:</strong> 5 Days / 4 Nights</p>
+                                    <p><strong>Price:</strong>$1,200 - $1,800</p>
+                                    <p><strong>Highlights:</strong></p>
+                                    <ul>
+                                        <li>Private beachfront candlelit dinners</li>
+                                        <li>Romantic boat ride in Koggala Lake</li>
+                                        <li>Couples' spa treatments</li>
+                                        <li>Sunset cruise in Galle</li>
+                                        <li>Stroll through the enchanting streets of Galle Fort</li>
+                                    </ul>
+                                    <p><strong>Package Inclusions:</strong></p>
+                                    <ul>
+                                        <li>Accommodation in romantic boutique hotels</li>
+                                        <li>Airport transfers</li>
+                                        <li>Daily breakfast and romantic dinners</li>
+                                        <li>Couples' spa session</li>
+                                        <li>Private tours and activities</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <i class="fa-regular fa-circle-xmark close"></i>
+                    </div>
+                    <div class="card">
+                        <div class="card-body"><img src="images/packages/p-1.jpg" alt="p1" class="pkg-img"></div>
+                        <div class="card-title">Serene Beach Retreat</div>
+                    </div>
+                    <div class="popup hidden">
+                        <div class="popup-content">
+                            <div class="image"><img src="images/packages/p-1.jpg" alt="p1" class="pkg-img">
+                                <div class="book-btn"><a href="../booking/booking.html">Book Now <i
+                                            class="fa-solid fa-angle-right"></i></a></div>
+                            </div>
+                            <div class="details">
+                                <div class="popup-title">Serene Beach Retreat</div>
+                                <div class="popup-body">
+                                    <p><strong>Duration:</strong> 7 Days / 6 Nights</p>
+                                    <p><strong>Price:</strong>$1,500 - $2,500</p>
+                                    <p>Highlights:</p>
+                                    <ul>
+                                        <li>Explore the pristine beaches of Mirissa and Unawatuna</li>
+                                        <li>Relax in luxurious beachfront resorts</li>
+                                        <li>Snorkeling and dolphin watching excursion</li>
+                                        <li>Sunset yoga sessions by the ocean</li>
+                                        <li>Gourmet seafood dining experiences</li>
+                                    </ul>
+                                    <p><strong>Package Inclusions</strong></p>
+                                    <ul>
+                                        <li>Accommodation in 4-star beach resorts</li>
+                                        <li>Airport transfers</li>
+                                        <li>Daily breakfast and selected meals</li>
+                                        <li>Guided tours and activities</li>
+                                        <li>Snorkeling gear and boat tour</li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                        <i class="fa-regular fa-circle-xmark close"></i>
+                    </div>
+                    <div class="card">
+                        <div class="card-body"><img src="images/packages/p-9-1.jpg" alt="p9" class="pkg-img"></div>
+                        <div class="card-title">Wellness and Yoga Retreat</div>
+                    </div>
+                    <div class="popup hidden">
+                        <div class="popup-content">
+                            <div class="image"><img src="images/packages/p-9-1.jpg" alt="p9" class="pkg-img">
+                                <div class="book-btn"><a href="../booking/booking.html">Book Now <i
+                                            class="fa-solid fa-angle-right"></i></a></div>
+                            </div>
+                            <div class="details">
+                                <div class="popup-title">Wellness and Yoga Retreat</div>
+                                <div class="popup-body">
+                                    <p><strong>Duration:</strong> 7 Days / 6 Nights</p>
+                                    <p><strong>Price:</strong>$1,500 - $2,200</p>
+                                    <p><strong>Highlights:</strong></p>
+                                    <ul>
+                                        <li>Daily yoga and meditation sessions</li>
+                                        <li>Ayurvedic spa treatments</li>
+                                        <li>Detox and wellness workshops</li>
+                                        <li>Relaxing time on serene beaches</li>
+                                        <li>Healthy and nutritious meals</li>
+                                    </ul>
+                                    <p><strong>Package Inclusions:</strong></p>
+                                    <ul>
+                                        <li>Accommodation in wellness resorts</li>
+                                        <li>Airport transfers</li>
+                                        <li>Daily yoga and meditation sessions</li>
+                                        <li>Ayurvedic spa treatments</li>
+                                        <li>Wellness workshops and activities</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <i class="fa-regular fa-circle-xmark close"></i>
+                    </div>
+                    <div class="card">
+                        <div class="card-body"><img src="images/packages/p-15.jpg" alt="p15" class="pkg-img"></div>
+                        <div class="card-title">Tropical Paradise Honeymoon</div>
+                    </div>
+                    <div class="popup hidden">
+                        <div class="popup-content">
+                            <div class="image"><img src="images/packages/p-15.jpg" alt="p15" class="pkg-img">
+                                <div class="book-btn"><a href="../booking/booking.html">Book Now <i
+                                            class="fa-solid fa-angle-right"></i></a></div>
+                            </div>
+                            <div class="details">
+                                <div class="popup-title">Tropical Paradise Honeymoon</div>
+                                <div class="popup-body">
+                                    <p><strong>Duration:</strong> 9 Days / 8 Nights</p>
+                                    <p><strong>Price:</strong>$2,000 - $3,000</p>
+                                    <p><strong>Highlights:</strong></p>
+                                    <ul>
+                                        <li>Romantic beachfront accommodations</li>
+                                        <li>Private sunset cruises</li>
+                                        <li>Couples' spa treatments</li>
+                                        <li>Scenic train ride through the hills</li>
+                                        <li>Honeymoon photo shoot</li>
+                                    </ul>
+                                    <p><strong>Package Inclusions:</strong></p>
+                                    <ul>
+                                        <li>Accommodation in romantic resorts</li>
+                                        <li>Airport transfers</li>
+                                        <li>Daily breakfast and romantic dinners</li>
+                                        <li>Special honeymoon perks and activities</li>
+                                        <li>Professional photography session</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <i class="fa-regular fa-circle-xmark close"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="custom">
+        <div class="contact-section">
+            <div class="contact-content">
+                <h2>Not what you're looking for?</h2>
+                <p>Contact us to customize your tours</p>
+                <a href="#" class="contact-button">Contact Us <i class="fa-solid fa-angle-right"></i></a>
+            </div>
+            <div class="contact-image">
+                <img src="images/contact-us.webp" alt="Customer Support Illustration">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                  <li><a href="index.html target="_blank"">🏠 Home</a></li>
+                  <li><a href="#">🌍 Reviews</a></li>
+                  <li><a href="#">📦 Packages</a></li>
+                  <li><a href="/About Us/aboutus.html/about.html"_blank"">📋 About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contacts</h3>
+                <ul>
+                  <li>📞 011 222 1234</li>
+                  <li>📞 077 1234 567</li>
+                  <li>✉️ <a href="mailto:travellanka@email.com">travellanka@email.com</a></li>
+                  <li>📍 Badulla, Sri Lanka</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#">📘 Facebook</a></li>
+                    <li><a href="#">📺 YouTube</a></li>
+                    <li><a href="#">📸 Instagram</a></li>
+                    <li><a href="#">🐦 Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+          <p>Created by <strong>Travellie media</strong> | &copy; 2025. All Rights Reserved</p>
+        </div>
+      </footer>
+</body>
+
+</html>

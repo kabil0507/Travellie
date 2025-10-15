@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>About Us</title>
+  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Karma&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+  <style>
+    /* General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+    }
+    /* Navbar Styles */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #0c4f17;
+        color: #fff;
+        padding: 10px 20px;
+    }
+    .navbar .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .navbar .logo img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+    .navbar .logo p {
+        font-family: 'Kaushan Script', cursive;
+        font-size: 24px;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+    .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+    .nav-links li {
+        position: relative;
+    }
+    .nav-links a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+    }
+    .nav-links a:hover {
+        color: #FFD700;
+    }
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 30px;
+        left: 0;
+        background-color: #0c4f17;
+        padding: 10px 0;
+        border-radius: 5px;
+    }
+    .dropdown-menu a {
+        display: block;
+        padding: 8px 20px;
+        text-decoration: none;
+        color: #fff;
+    }
+    .dropdown-menu a:hover {
+        background-color: #FFD700;
+        color: #000;
+    }
+    .nav-links .services:hover .dropdown-menu {
+        display: block;
+    }
+    .menu-toggle {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+    }
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .nav-links {
+            flex-direction: column;
+            background-color: #0c4f17;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 100%;
+            display: none;
+        }
+        .nav-links.show {
+            display: flex;
+        }
+        .menu-toggle {
+            display: block;
+        }
+    }
+</style>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+<nav class="navbar">
+  <div class="logo">
+      <img src="logo.jpeg" alt="logo">
+      <p>Travellie.com</p>
+  </div>
+  <div class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
+  </div>
+  <ul class="nav-links" id="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="../../review/reviews.html">Review</a></li>
+      <li class="services">
+          Services
+          <div class="dropdown-menu">
+              <a href="../../booking/booking.html">Booking</a>
+              <a href="../../packages/packages.html">Packages</a>
+          </div>
+      </li>
+      <li><a href="../../contact Us/Contact Us.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+  });
+</script>
+  <section class="header">
+    <h2>ABOUT US</h2>
+  </section>
+  <!---picture and paragraph-->
+  <div class="container">
+    <section class="about">
+      <div class="about-image">
+        <img src="..\images\girll.jpeg">
+      </div>
+      <div class="about-content">
+        <h2>Who are we?</h2>
+        <h3>YOUR ADVENTURE BEGINS HERE...</h3><br>
+        <p>At travallie, we believe that travel should be an enriching and unforgettable experience. That's why we've
+          created this website as a comprehensive resource for all your travel needs. Whether you're seeking thrilling
+          adventures, relaxing beach escapes, cultural immersion, or simply a change of scenery, we've got you covered.
+          We offer detailed guides on attractions, accommodation, transportation, and local experiences, along with
+          stunning photos and videos to inspire your wanderlust. Our mission is to empower you to plan your perfect trip
+          and create memories that will last a lifetime.
+        </p>
+      </div>
+    </section>
+  </div><br><br>
+  <!------counts-->
+  <section class="count">
+    <div class="loc">
+      <h4>40+</h4>
+      <h5>LOCATIONS</h5>
+    </div>
+    <div class="act">
+      <h4>150+</h4>
+      <h5>ACTIVITIES</h5>
+    </div>
+    <div class="cus">
+      <h4>10,000+</h4>
+      <h5>CUSTOMERS</h5>
+    </div>
+  </section><br><br>
+  <!----para-->
+  <section class="more">
+    <div class="sus">
+      <p>SUSTAINABLY<br> DESIGNED ADVENTURES</p>
+    </div>
+    <div class="para">
+      <p>We at travallie Adventures prioritize environmentally friendly and socially responsible travel
+        experiences.We contribute to our ecosystem by promoting conservation efforts and
+        supporting local communities. Our adventures aim to create meaningfull connections with
+        both the environment and the people at the destination by educating and inspiring
+        travelers about the natural world by fostering a deeper understanding of sustainability
+        these experiences enrich travellers with contributing positively to the planet and its
+        inhabitants.
+      </p>
+    </div>
+  </section>
+  <!---why choosing us-->
+  <section class="footer1">
+    <div class="why">
+      <h1>Why Choosing Us</h1>
+    </div><br><br>
+    <div class="row1">
+      <div class="col11">
+        <i class="bi bi-map"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-map"
+          viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.5.5 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103M10 1.91l-4-.8v12.98l4 .8zm1 12.98 4-.8V1.11l-4 .8zm-6-.8V1.11l-4 .8v12.98z" />
+        </svg><br>
+        <h1>Unique Itineraries</h1>
+        <p>For your travel
+        </p>
+      </div>
+      <div class="col12">
+        <i class="bi bi-cash"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cash"
+          viewBox="0 0 16 16">
+          <path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4" />
+          <path
+            d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2z" />
+        </svg><br>
+        <h1>Fair Prices</h1>
+        <p>To engage your travel
+        </p>
+      </div>
+      <div class="col13">
+        <i class="bi bi-clock"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock"
+          viewBox="0 0 16 16">
+          <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
+          <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0" />
+        </svg><br>
+        <h1>24hrs Customer Services</h1>
+        <p>For guidance
+        </p><br><br><br><br><br>
+      </div>
+
+    </div>
+    <div class="row2">
+      <div class="col21">
+        <i class="bi bi-person-circle"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle"
+          viewBox="0 0 16 16">
+          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+          <path fill-rule="evenodd"
+            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+        </svg><br>
+        <h1>Responsible Travel</h1>
+        <p>For better Experience
+        </p>
+      </div>
+      <div class="col22">
+        <i class="bi bi-database-fill"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-database-fill"
+          viewBox="0 0 16 16">
+          <path
+            d="M3.904 1.777C4.978 1.289 6.427 1 8 1s3.022.289 4.096.777C13.125 2.245 14 2.993 14 4s-.875 1.755-1.904 2.223C11.022 6.711 9.573 7 8 7s-3.022-.289-4.096-.777C2.875 5.755 2 5.007 2 4s.875-1.755 1.904-2.223" />
+          <path
+            d="M2 6.161V7c0 1.007.875 1.755 1.904 2.223C4.978 9.71 6.427 10 8 10s3.022-.289 4.096-.777C13.125 8.755 14 8.007 14 7v-.839c-.457.432-1.004.751-1.49.972C11.278 7.693 9.682 8 8 8s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972" />
+          <path
+            d="M2 9.161V10c0 1.007.875 1.755 1.904 2.223C4.978 12.711 6.427 13 8 13s3.022-.289 4.096-.777C13.125 11.755 14 11.007 14 10v-.839c-.457.432-1.004.751-1.49.972-1.232.56-2.828.867-4.51.867s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972" />
+          <path
+            d="M2 12.161V13c0 1.007.875 1.755 1.904 2.223C4.978 15.711 6.427 16 8 16s3.022-.289 4.096-.777C13.125 14.755 14 14.007 14 13v-.839c-.457.432-1.004.751-1.49.972-1.232.56-2.828.867-4.51.867s-3.278-.307-4.51-.867c-.486-.22-1.033-.54-1.49-.972" />
+        </svg><br>
+        <h1>Pay in Installments</h1>
+        <p>For your good
+        </p>
+      </div>
+      <div class="col23">
+        <i class="bi bi-shield-check"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-shield-check"
+          viewBox="0 0 16 16">
+          <path
+            d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56" />
+          <path
+            d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0" />
+        </svg><br>
+        <h1>Secure Payments</h1>
+        <p>For safety
+        </p>
+      </div>
+    </div>
+
+  </section>
+  <!-- Footer -->
+<footer>
+  <div class="footer-content">
+      <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">🏠 Home</a></li>
+            <li><a href="#">🌍 Reviews</a></li>
+            <li><a href="#">📦 Packages</a></li>
+            <li><a href="#">📋 About Us</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h3>Contacts</h3>
+          <ul>
+            <li>📞 011 222 1234</li>
+            <li>📞 077 1234 567</li>
+            <li>✉️ <a href="mailto:travellanka@email.com">travellanka@email.com</a></li>
+            <li>📍 Badulla, Sri Lanka</li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h3>Follow Us</h3>
+          <ul>
+              <li><a href="#">📘 Facebook</a></li>
+              <li><a href="#">📺 YouTube</a></li>
+              <li><a href="#">📸 Instagram</a></li>
+              <li><a href="#">🐦 Twitter</a></li>
+          </ul>
+      </div>
+  </div>
+  <div class="footer-bottom">
+      <p>Created by <strong>Travellie media</strong> || &copy; 2025. All Rights Reserved</p>
+    </div>
+</footer>
+
+</body>
+
+</html>

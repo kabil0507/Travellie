@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travellie.com - Reviews</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+   <!-- Navigation Bar -->
+   <nav class="navbar">
+    <div class="logo">
+        <img src="logo.jpeg" alt="logo">
+        <p>Travellie.com</p>
+    </div>
+    <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../About Us/aboutus.html/about.html">About Us</a></li>
+        <li><a href="../review/reviews.html">Review</a></li>
+        <li class="services">
+            Services
+            <div class="dropdown-menu">
+                <a href="../booking/booking.html">Booking</a>
+                <a href="../packages/packages.html">Packages</a>
+            </div>
+        </li>
+        <li><a href="../contact Us/Contact Us.html">Contact Us</a></li>
+    </ul>
+</nav>
+    <section class="reviews" style="background-image: url('image.png'); background-size: cover; background-position: center;">
+        <div class="container">
+            <h2 style="color: white; font-size: 4rem; font-weight: bold; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);">REVIEWS</h2>
+        </div>
+    </section>
+
+    <section class="reviews">
+        <div class="container">
+            <div class="review-carousel">
+                <div class="review">
+                    <img src="profile1.jpg" alt="Reviewer">
+                    <h3>Shehan Wickramasinghe</h3>
+                    <p>We used weligama cab service for Airport transfers and private sightseeing tours (Yala safari and a full day tour). Great service, fast response, fair prices and safe drivers with excellent work.</p>
+                </div>
+                <div class="review">
+                    <img src="profile2.jpg" alt="Reviewer">
+                    <h3>Rashan Lahiru</h3>
+                    <p>The best man. He knows what he is doing and 100% recommend.</p>
+                </div>
+                <div class="review">
+                    <img src="profile3.jpg" alt="Reviewer">
+                    <h3>Yasiru Udara</h3>
+                    <p>Wonderful experience with weligama cabs. Excellent work.</p>
+                </div>
+                <div class="review">
+                    <img src="profile4.jpg" alt="Reviewer">
+                    <h3>Ashoka H</h3>
+                    <p>Highly recommend! We recently used the weligama cab service from Colombo airport to Sigiriya and then onwards to Galle and finally to Colombo. Amazing service.</p>
+                </div>
+                <div class="review">
+                    <img src="profile5.jpg" alt="Reviewer">
+                    <h3>Janith G</h3>
+                    <p>Comfortable rides. We enjoyed our comfortable rides with Weligama Cabs. The air conditioning worked perfectly, making our travel easier.</p>
+                </div>
+                <div class="review">
+                    <img src="profile6.jpg" alt="Reviewer">
+                    <h3>Wasantha M</h3>
+                    <p>Easy booking process. Booking our tours with Weligama Cabs was easy and straightforward. I appreciated the quick responses to our inquiries!</p>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+        </div>
+    </section>
+    <section class="review-form">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2rem; margin-bottom: 1rem;">Submit Your Review</h2>
+            <form id="reviewForm" action="submit_review.php" method="post" style="background: #f9f9f9; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                <div style="margin-bottom: 1rem;">
+                    <label for="name" style="display: block; font-weight: bold; margin-bottom: 0.5rem;">Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Your Name" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <label for="email" style="display: block; font-weight: bold; margin-bottom: 0.5rem;">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Your Email" style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <label for="message" style="display: block; font-weight: bold; margin-bottom: 0.5rem;">Your Review:</label>
+                    <textarea id="message" name="message" required placeholder="Write your review here..." style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 5px;" rows="5"></textarea>
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <label for="rating" style="display: block; font-weight: bold; margin-bottom: 0.5rem;">Rating:</label>
+                    <select id="rating" name="rating" required style="width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 5px;">
+                        <option value="" disabled selected>Select your rating</option>
+                        <option value="5">5 - Excellent</option>
+                        <option value="4">4 - Very Good</option>
+                        <option value="3">3 - Good</option>
+                        <option value="2">2 - Fair</option>
+                        <option value="1">1 - Poor</option>
+                    </select>
+                </div>
+                <div style="text-align: center;">
+                    <button type="submit" style="background-color: #002244; color: #fff; border: none; padding: 0.75rem 1.5rem; border-radius: 5px; font-size: 1rem; cursor: pointer;">Submit Review</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+
+    <!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#">🏠 Home</a></li>
+              <li><a href="#">🌍 Reviews</a></li>
+              <li><a href="#">📦 Packages</a></li>
+              <li><a href="#">📋 About Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Contacts</h3>
+            <ul>
+              <li>📞 011 222 1234</li>
+              <li>📞 077 1234 567</li>
+              <li>✉️ <a href="mailto:travellanka@email.com">travellanka@email.com</a></li>
+              <li>📍 Badulla, Sri Lanka</li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Follow Us</h3>
+            <ul>
+                <li><a href="#">📘 Facebook</a></li>
+                <li><a href="#">📺 YouTube</a></li>
+                <li><a href="#">📸 Instagram</a></li>
+                <li><a href="#">🐦 Twitter</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>Created by <strong>Travellie media</strong> || &copy; 2025. All Rights Reserved</p>
+      </div>
+</footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

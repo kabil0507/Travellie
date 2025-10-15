@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travellie.com</title>
+    <link rel="stylesheet" href="Styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Karma&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Istok Web' rel='stylesheet'> 
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="logo">
+        <img src="images\log.jpeg" alt="logo">
+        <p>Travellie.com</p>
+    </div>
+    <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About Us\aboutus.html\about.html">About Us</a></li>
+        <li><a href="review\reviews.html">Review</a></li>
+        <li class="services">
+            Services
+            <div class="dropdown-menu">
+                <a href="booking\booking.html">Booking</a>
+                <a href="packages\packages.html">Packages</a>
+            </div>
+        </li>
+        <li><a href="contact Us/Contact Us.html">Contact Us</a></li>
+    </ul>
+</nav>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+    });
+</script>
+
+<!-- Header Section -->
+</header>
+<header class="header">
+    <p>Tours & Travel</p>
+    <h1>TRAVEL AROUND<br>SRI LANKA</h1>
+    <div class="search-bar">
+      <input type="text" placeholder="Search destinations...">
+      <button>Search</button>
+    </div>
+  </header>
+<br><br>
+<!-- services icons -->
+<div class="service-icons">
+        <p class="heading">Start  Your  Tour  With  Our  Best  Services</p>
+        <br><br>
+    <div class="icon-container">
+          <div class="icon-item">
+            <img class="service-icon-img" src="images/navigation.webp" >
+            <p class="icon-text">100+ Things to do</p>
+          </div>
+          <div class="icon-item">
+            <img class="service-icon-img" src="images/reviews-1.webp"  height="80px" width="80px">
+            <p class="icon-text">250+ reviews</p>
+          </div>
+          <div class="icon-item">
+            <img class="service-icon-img" src="images/special-offer.webp"  height="80px" width="80px">
+            <p class="icon-text">Lowest price guarenteed</p>
+          </div>
+          <div class="icon-item">
+            <img class="service-icon-img" src="images/customer-support.webp"  height="80px" width="80px">
+            <p class="icon-text">24/7 Support</p>
+          </div>
+          <div class="icon-item">
+            <img class="service-icon-img" src="images/users icon.png"  height="80px" width="80px">
+            <p class="icon-text">Members of SLTDA</p>
+          </div>
+    </div>
+</div>
+<br><br><br><br>
+<!-- choosing us section -->
+<div class="hero-section" >
+    <div class="content-area">
+            <h1 class="hero-text">Why choosing us</h1>
+            <br>
+        <div class="hero-section-content">
+            <div class="hero-icons1">
+                <i class="fa-solid fa-money-bill-1-wave" style="font-size:48px;color:white"></i>
+                <p class="hero-icon-text">Fair prices</p><br>
+                <p class="hero-icons-p">Affordable Adventures<br> Await – Travel Smart,<br> Travel Fair.</p>
+            </div>
+            <div class="hero-icons2">
+                <i class="fa-regular fa-clock" style="font-size:48px;color:white"></i>
+                <p class="hero-icon-text">24hrs Customer Service</p><br>
+                <p class="hero-icons-p">Service Around<br>the Clock – Because<br>You Deserve the Best.</p>
+            </div>
+            <div class="hero-icons3">
+                <i class="far fa-user-circle" style="font-size:48px;color:white"></i>
+                <p class="hero-icon-text">Responsible Travel</p><br>
+                <p class="hero-icons-p">Responsible Journeys,<br>Affordable Payments – Anytime,<br> Anywhere.</p>
+            </div>
+            <div class="hero-icons4">
+                <i class="fa-solid fa-coins" style="font-size:48px;color:white"></i>
+                <p class="hero-icon-text">Pay in installments</p><br>
+                <p class="hero-icons-p">Adventure with<br>Ease – Pay in Parts,<br> Anytime.</p>
+            </div>
+        </div>
+    </div>   
+</div>
+<br><br>
+<!-- Services Four Boxes Section -->
+<div class="services">
+        <h2>Custom Tours</h2>
+        <br>
+      <div class="box-container">
+        <div class="box">
+            <img src="images\yala adventure.jfif" alt="Box 1">
+            <p>Yala Adventures</p>
+        </div>
+
+        <div class="box">
+            <img src="images\flying rawana.jpg" alt="Box 2">
+            <p>Flying Ravana</p>
+        </div>
+
+        <div class="box">
+            <img src="images\mirissa.jpg" alt="Box 3">
+            <p>Sunset in Mirissa</p>
+        </div>
+
+        <div class="box">
+            <img src="images\dalada maligawa.jfif" alt="Box 4">
+            <p>Temple of Tooth</p>
+        </div>
+      </div>
+      <br>
+      <a href="custom tours\custom tours.html">
+      <button class="show-more">Show More</button>
+     </a>
+</div>
+<br><br>
+
+<!-- packages Four Boxes Section -->
+<div class="packages">
+    <h2>Packages</h2>
+    <br>
+  <div class="box-container">
+    <div class="box">
+        <img src="images\Adventure expedition.jpg" alt="Box 1">
+        <p>Adventure and nature</p>
+    </div>
+
+    <div class="box">
+        <img src="images\wildlife expedition.webp" alt="Box 2">
+        <p>Wildlife Expedition</p>
+    </div>
+
+    <div class="box">
+        <img src="images\cultural odyssey.jpg" alt="Box 3">
+        <p>Cultural and Heritage</p>
+    </div>
+
+    <div class="box">
+        <img src="images\romantic gateway.jpg" alt="Box 4">
+        <p>Romance and Realxation</p>
+    </div>
+    </div>
+    <a href="packages\packages.html">
+        <button class="show-more">Show More</button>
+    </a>
+    </div>
+<br><br>
+<!-- Completed tours -->
+<div class="Tours-container">
+    <div class="content">
+        <div class="content-text">
+            <p class="text1">280</p>
+            <p class="text2">Done Transports</p>
+        </div>
+        <div class="content-text">
+            <p class="text1">58</p>
+            <p class="text2">Done Tours</p>
+        </div>
+        <div class="content-text">
+            <p class="text1">327</p>
+            <p class="text2">Happy Tourists</p>
+        </div>    
+    </div>
+</div>
+<!-- Customer Reviews -->
+<div class="reviews-section">
+    <h2>Customer Reviews</h2>
+    <div class="review-link">
+        <a href="review\reviews.html">Overall reviews <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <br>
+    <div class="reviews-container">
+        
+        <div class="review-card">
+            <img src="images\user pic.png" alt="Traveler 1">
+            <div class="review-content">
+                <h3>Emily Johnson</h3>
+                <div class="stars">★★★★★</div>
+                <p class="review-text">Absolutely amazing experience! The guides were knowledgeable, and the scenery was breathtaking.</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <img src="images\user pic.png" alt="Traveler 2">
+            <div class="review-content">
+                <h3>Michael Smith</h3>
+                <div class="stars">★★★★☆</div>
+                <p class="review-text">A wonderful trip with great service. I highly recommend this travel guide to anyone exploring new places!</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <img src="images\user pic.png" alt="Traveler 3">
+            <div class="review-content">
+                <h3>Sarah Lee</h3>
+                <div class="stars">★★★★★</div>
+                <p class="review-text">Best vacation ever! Everything was well-organized and stress-free. Can’t wait for my next adventure!</p>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html target="_blank"">🏠 Home</a></li>
+              <li><a href="#">🌍 Reviews</a></li>
+              <li><a href="#">📦 Packages</a></li>
+              <li><a href="/About Us/aboutus.html/about.html"_blank"">📋 About Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Contacts</h3>
+            <ul>
+              <li>📞 011 222 1234</li>
+              <li>📞 077 1234 567</li>
+              <li>✉️ <a href="mailto:travellanka@email.com">travellanka@email.com</a></li>
+              <li>📍 Badulla, Sri Lanka</li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Follow Us</h3>
+            <ul>
+                <li><a href="#">📘 Facebook</a></li>
+                <li><a href="#">📺 YouTube</a></li>
+                <li><a href="#">📸 Instagram</a></li>
+                <li><a href="#">🐦 Twitter</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>Created by <strong>Travellie media</strong> || &copy; 2025. All Rights Reserved</p>
+      </div>
+</footer>
+</body>
+</html>

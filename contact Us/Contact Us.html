@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('show');
+    });
+</script>
+</head>
+
+<body>
+  <style>
+    /* Navbar Styles */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #0c4f17;
+      color: #fff;
+      padding: 10px 20px;
+      height: 40px;
+    }
+
+    .navbar .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .navbar .logo img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+
+    .navbar .logo p {
+      font-family: 'Kaushan Script', cursive;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 20px;
+      font-family: Garamond, serif;
+    }
+
+    .nav-links a:hover {
+      color: #FFD700;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 30px;
+      left: 0;
+      background-color: #0c4f17;
+      padding: 10px 0;
+      border-radius: 5px;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 8px 20px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #FFD700;
+      color: #000;
+    }
+
+    .nav-links .services:hover .dropdown-menu {
+      display: block;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* General Footer Styles */
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-decoration: none;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-column {
+      flex: 1;
+      padding-left: 60px;
+    }
+
+    .footer-column h3 {
+      margin-bottom: 15px;
+      font-size: 18px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-bottom: 2px solid #ff6347;
+      display: inline-block;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-column ul li a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-column ul li a:hover {
+      color: #ff6347;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      body {
+        width: 100%;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        background-color: #0c4f17;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        display: none;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      /* footer */
+      .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .footer-column {
+        text-align: center;
+      }
+    }
+
+    /* Reset Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Header Section */
+    .hero-section {
+      position: relative;
+      background-image: url('sea.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    @media (max-width: 768px) {
+      .hero-section {
+        background-position: top;
+        height: 70vh;
+      }
+
+      h1 {
+        font-size: 150%;
+      }
+
+      .contact-container {
+        padding: 5%;
+        flex-direction: column;
+      }
+
+      .location {
+        flex-direction: column;
+      }
+
+      .contact-details {
+        border-right: hidden !important;
+        text-align: center;
+      }
+
+      .location .vision {
+        padding-top: 40px;
+        align-self: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-section {
+        background-position: top;
+        height: 50vh;
+      }
+
+      h1 {
+        font-size: 130%;
+      }
+    }
+
+
+    /* Hero Content */
+    .hero-content {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 48px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    .breadcrumb {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      color: black;
+      padding: 10px 0;
+    }
+
+    .breadcrumb span {
+      color: black;
+    }
+
+    .breadcrumb-line {
+      border-top: 4px solid gray;
+      margin-top: 4px;
+    }
+
+    .breadcrumb img {
+      width: 12px;
+      height: 12px;
+      vertical-align: middle;
+      margin: 0 5px;
+      filter: grayscale(100%);
+      opacity: 0.8;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .contact-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 5% 10%;
+    }
+
+
+    .contact-details {
+      flex: 1;
+      padding: 20px 30px 20px 10px;
+      border-right: 2px solid #ccc;
+    }
+
+    .contact-details h2 {
+      color: darkblue;
+      font-size: 30px;
+    }
+
+    .contact-details p {
+      margin: 10px 0;
+      line-height: 1.5;
+    }
+
+    .contact-details img {
+      width: 12px;
+      height: 12px;
+      vertical-align: middle;
+      margin: 0 5px;
+    }
+
+    .logo img {
+      width: 200px;
+      height: 200px;
+      filter: drop-shadow(10px);
+    }
+
+    .tour-info {
+      text-align: left;
+      font-family: Arial, sans-serif;
+      margin: 10px;
+    }
+
+    .highlight {
+      font-size: 15px;
+
+      color: black;
+    }
+
+    .question {
+      font-size: 15px;
+      color: black;
+    }
+
+    .contact-details h3 {
+      font-size: 20px;
+      margin-top: 20px;
+      font-style: italic;
+    }
+
+    .contact-form {
+      flex: 2;
+      padding: 40px;
+    }
+
+    .contact-form h2 {
+      color: #007BFF;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .contact-form label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 90%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .contact-form textarea {
+      height: 100px;
+      resize: none;
+    }
+
+    .contact-form .form-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .contact-form button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .contact-form button[type="reset"] {
+      background-color: #ccc;
+      color: #000;
+    }
+
+    .contact-form button[type="submit"] {
+      background-color: #007BFF;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button[type="submit"]:hover {
+      background-color: darkblue;
+    }
+
+    .contact-form span {
+      color: red;
+    }
+
+    .location h2 {
+      color: #000;
+      text-align: center;
+    }
+
+    .location p {
+      text-align: center;
+    }
+
+    .location iframe {
+      border: #000;
+      max-width: 90%;
+      max-height: 90%;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .location {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 8%;
+      margin: 2%;
+    }
+  </style>
+
+  <!--Webpage header-->
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.jpeg" alt="logo">
+      <p>Travellie.com</p>
+    </div>
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../About Us/aboutus.html/about.html">About Us</a></li>
+      <li><a href="../review/reviews.html">Review</a></li>
+      <li class="services">
+        Services
+        <div class="dropdown-menu">
+          <a href="../booking/booking.html">Booking</a>
+          <a href="../packages/packages.html">Packages</a>
+        </div>
+      </li>
+      <li><a href="../contact Us/Contact Us.html">Contact Us</a></li>
+    </ul>
+  </nav>
+  
+  <header class="hero-section">
+
+    <div class="hero-content">
+      <h1>Contact Us</h1>
+    </div>
+  </header>
+
+
+  <!-- contact details in left side corner-->
+
+
+  <div class="contact-container">
+
+    <div class="contact-details">
+      <h2>Stay In Touch With Us</h2><br>
+      <p><img src="phone.png" alt="Tele"> +94 77 230 567</p>
+      <p><img src="location.png" alt="location">No: 94/271,Avenue Lane,Colombo 07,<br>
+        Sri Lanka</p>
+      <p><img src="email.png" alt="mail">travelliasrilanka@gmail.com</p><br><br>
+      <div class="tour-info">
+        <p class="highlight"><b>Travellie tours available in 24hrs to provide you more information and answer any
+            question.</b></p>
+      </div>
+
+
+      <!--Travellie logo in contact details page-->
+      <div class="logo">
+        <img src="logo line.jpg" alt="travallie logo">
+      </div>
+    </div>
+    <!--Contact Us form-->
+
+
+    <div class="contact-form">
+      <form>
+
+        <label for="name">Full Name <span>*</span></label> <br>
+        <input type="text" id="name" name="name" required> <br>
+
+
+        <label for="email">E-mail Address <span>*</span></label> <br>
+        <input type="email" id="email" name="email" required> <br>
+
+
+        <label for="nationality">Nationality</label> <br>
+        <input type="text" id="nationality" name="nationality"> <br>
+
+
+        <label for="telephone">Telephone Number</label> <br>
+        <input type="tel" id="telephone" name="telephone"> <br>
+
+
+        <label for="subject">Subject</label> <br>
+        <input type="text" id="subject" name="subject"> <br>
+
+
+        <label for="comment">Comment</label> <br>
+        <textarea id="comment" name="comment" placeholder="Write Your comment Here"></textarea>
+        <br>
+        <button type="reset" value="clear">Reset</button>
+        <button type="submit">Submit</button>
+
+      </form><br><br><br>
+    </div>
+  </div>
+
+  <!-- company Location finder-->
+
+  <div class="location">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15843.693739570685!2d79.8632608!3d6.8997604!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25965b24c69c1%3A0xe50886d0050a5ed5!2sColombo%2007%2C%20Colombo%2000700!5e0!3m2!1sen!2slk!4v1734882743676!5m2!1sen!2slk"
+      width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    </iframe>
+    <div class="vision">
+      <h2>See Where We Are</h2>
+      <p>Find us with our location service and contact us.</p><br><br>
+      <p>No: 94/271,Avenue Lane,Colombo 07,<br>Sri Lanka</p><br>
+      <img src="perahera.jpg" alt="perahera" width="300" height="150">
+    </div>
+
+  </div>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">🏠 Home</a></li>
+          <li><a href="#">🌍 Reviews</a></li>
+          <li><a href="#">📦 Packages</a></li>
+          <li><a href="#">📋 About Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Contacts</h3>
+        <ul>
+          <li>📞 011 222 1234</li>
+          <li>📞 077 1234 567</li>
+          <li>✉️ <a href="mailto:travellanka@email.com">travellanka@email.com</a></li>
+          <li>📍 Badulla, Sri Lanka</li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Follow Us</h3>
+        <ul>
+          <li><a href="#">📘 Facebook</a></li>
+          <li><a href="#">📺 YouTube</a></li>
+          <li><a href="#">📸 Instagram</a></li>
+          <li><a href="#">🐦 Twitter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Created by <strong>Travellie media</strong> || &copy; 2025. All Rights Reserved</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

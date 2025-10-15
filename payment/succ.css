@@ -1,0 +1,70 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  
+  background: url('payment page05.jpg') no-repeat center center/cover;
+  color: #ffffff;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure full viewport height */
+
+}
+.success {
+  background-color: hsl(243, 100%, 13%)    ;
+  width: 100%;
+  max-width: 500px;
+  padding: 50px 50px;
+  border-radius: 10px;
+  text-align: center;
+  margin: auto;
+  opacity: 70%;
+  font-size: 150%;
+  
+}
+
+p {
+  font-size: 14px;
+}
+
+.btn-submit{
+  color: #fff;
+  background-color: #008fb7;
+  width: 130px;
+  padding: 10px;
+  border: none;
+  border-radius: 100px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.btn-submit:hover{
+  background-color: #003063;
+  transform: translateY(-2px);
+}
+
+.footer {
+  background-color: #282865 ;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  margin-top: auto;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  
+}
+
+ul li {
+  margin: 0 20px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #ced2ff;
+  font-weight: 600;
+  transition: color 0.3s;
+}
